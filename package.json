@@ -4,6 +4,6 @@
         "playwright": "1.8.0"
     },
         "scripts": {
-            "test":  "mocha --no-timeouts 'tests/LoginTest.js'"
+            "test":  "mocha --no-timeouts 'tests/*.js'"
         }
 }
