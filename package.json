@@ -1,9 +1,12 @@
 {
     "devDependencies": {
-        "mocha":"^8.2.1",
+        "mocha": "^8.2.1",
         "playwright": "1.8.0"
     },
-        "scripts": {
-            "test":  "mocha --no-timeouts 'tests/*.js'"
-        }
+    "scripts": {
+        "test": "mocha --no-timeouts 'tests/*.js'"
+    },
+    "dependencies": {
+        "typescript": "^4.1.3"
+    }
 }
