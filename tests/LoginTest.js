@@ -17,18 +17,18 @@ describe('Amazon Web TR UI PoC - TestHive', function() {
 
     beforeEach(async () => {   
         page = await browser.newPage();
-        const mainPage = new MainPage(page);
-        await mainPage.navigate('http://amazon.com.tr/')
+        await page.goto('http://amazon.com.tr/')
     })
 
     afterEach(async () => {
-        const mainPage = new MainPage(page);
-        await mainPage.page.close()
+        await page.close()
     })
 
     it('should signup for Amazon', async() =>{
-        const mainPage = new MainPage(page);
-        await mainPage.login('Test Hive', 'sbs64476@zwoho.com', 'password123')
+        await page.fill('#twotabsearchtextbox', 'televizyon')
+        await page.click('#nav-search-submit-text')
+        await page.waitForSelector('[dir=auto]')
+        await assert.equal(await page.innerText('.a-color-state.a-text-bold'),'"televizyon"')
     })
 
 })
