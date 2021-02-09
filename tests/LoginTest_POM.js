@@ -5,7 +5,7 @@ const MainPage = require("../pages/MainPage").MainPage
 describe('AmazonTR Web UI Test POM - Test Hive',function(){
     let browser, page
 
-        before(async () => {
+    before(async () => {
         //headless : true => headless mode
         //no parameter => headless mode
         browser = await chromium.launch({headless : false})
