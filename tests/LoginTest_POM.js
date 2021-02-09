@@ -2,10 +2,10 @@ const {chromium} = require ('playwright')
 const assert = require('assert')
 const MainPage = require("../pages/MainPage").MainPage
 
-describe('Amazon Web TR UI PoC - TestHive', function() {
+describe('AmazonTR Web UI Test POM - Test Hive',function(){
     let browser, page
-    
-    before(async () => {
+
+        before(async () => {
         //headless : true => headless mode
         //no parameter => headless mode
         browser = await chromium.launch({headless : false})
@@ -17,18 +17,16 @@ describe('Amazon Web TR UI PoC - TestHive', function() {
 
     beforeEach(async () => {   
         page = await browser.newPage();
-        const mainPage = new MainPage(page);
-        await mainPage.navigate('http://amazon.com.tr/')
     })
 
     afterEach(async () => {
-        const mainPage = new MainPage(page);
-        await mainPage.page.close()
+        await page.close()
     })
 
     it('should signup for Amazon', async() =>{
         const mainPage = new MainPage(page);
-        await mainPage.login('Test Hive', 'sbs64476@zwoho.com', 'password123')
+        await mainPage.navigate('http://amazon.com.tr/')
+        await mainPage.login('Test Hive', 'sbx64476@zwoho.com', 'password123')
     })
 
 })
